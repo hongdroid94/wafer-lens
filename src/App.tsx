@@ -211,7 +211,7 @@ function App() {
             <p>This prototype compares a wafer map with labeled examples using a lightweight nearest-neighbor pattern model. The suggestions respond immediately as you edit the die field.</p>
             <dl>
               <div><dt>Data boundary</dt><dd>Derived from the public <a href="https://www.kaggle.com/datasets/qingyi/wm811k-wafer-map/metadata" target="_blank" rel="noreferrer">WM-811K wafer-map listing</a> by QINGYI, marked CC0 on Kaggle; upstream provenance is unverified. No SK hynix internal data.</dd></div>
-              <div><dt>Evaluation boundary</dt><dd>On 351 held-out, unseen-lot maps: 60.4% correct including abstentions; 22.8% abstained; 78.2% correct among accepted maps. Labels may be noisy. This is not a validated production yield predictor.</dd></div>
+              <div><dt>Evaluation boundary</dt><dd>Exploratory v2 evaluation on 351 maps: 60.4% correct including abstentions; 22.8% abstained; 78.2% correct among accepted maps. V2 training and validation lots were disjoint, but 36 evaluated wafer IDs appeared in earlier v1 training. Labels may be noisy; this is not a validated production yield predictor.</dd></div>
               <div><dt>Decision boundary</dt><dd>Use a suggested pattern to organize further inspection. Confirm any action with process history, metrology, and engineering review.</dd></div>
             </dl>
           </div>
