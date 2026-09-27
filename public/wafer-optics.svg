@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="720" viewBox="0 0 720 720" fill="none">
+  <defs>
+    <clipPath id="wafer">
+      <circle cx="360" cy="360" r="294"/>
+    </clipPath>
+    <pattern id="reticle" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" stroke="#8ba4aa" stroke-opacity=".13" stroke-width=".65"/>
+      <circle cx="0" cy="0" r="1" fill="#b7c8c9" fill-opacity=".25"/>
+    </pattern>
+    <radialGradient id="glass" cx="0" cy="0" r="1" gradientTransform="matrix(0 294 -294 0 360 66)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#a9d1d0" stop-opacity=".045"/>
+      <stop offset="1" stop-color="#a9d1d0" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <g clip-path="url(#wafer)">
+    <circle cx="360" cy="360" r="294" fill="url(#glass)"/>
+    <path d="M66 360h588M360 66v588" stroke="#a9c0c2" stroke-opacity=".16" stroke-width=".7"/>
+    <path d="M66 360h588M360 66v588" stroke="#d6e5e3" stroke-opacity=".22" stroke-width=".7" stroke-dasharray="2 22"/>
+    <rect x="66" y="66" width="588" height="588" fill="url(#reticle)"/>
+    <circle cx="360" cy="360" r="278" stroke="#c0d3d1" stroke-opacity=".23" stroke-width=".8"/>
+    <circle cx="360" cy="360" r="244" stroke="#a8c0c0" stroke-opacity=".16" stroke-width=".7"/>
+    <circle cx="360" cy="360" r="204" stroke="#a8c0c0" stroke-opacity=".18" stroke-width=".7"/>
+    <circle cx="360" cy="360" r="162" stroke="#a8c0c0" stroke-opacity=".17" stroke-width=".7"/>
+    <circle cx="360" cy="360" r="116" stroke="#a8c0c0" stroke-opacity=".17" stroke-width=".7"/>
+    <circle cx="360" cy="360" r="68" stroke="#a8c0c0" stroke-opacity=".2" stroke-width=".7"/>
+    <circle cx="360" cy="360" r="20" stroke="#c7d7d5" stroke-opacity=".28" stroke-width=".8"/>
+
+    <path d="M360 66v16m0 556v16M66 360h16m556 0h16" stroke="#55d7df" stroke-opacity=".58" stroke-width="1.2"/>
+    <path d="M214 105a278 278 0 0 1 292 0M615 214a278 278 0 0 1 0 292M506 615a278 278 0 0 1-292 0M105 506a278 278 0 0 1 0-292" stroke="#55d7df" stroke-opacity=".46" stroke-width="1.15" stroke-dasharray="18 7 2 7"/>
+    <path d="M142 202l12 7m412 302 12 7M202 578l7-12m302-412 7-12" stroke="#55d7df" stroke-opacity=".52" stroke-width="1.1"/>
+    <circle cx="360" cy="82" r="2.2" fill="#55d7df" fill-opacity=".8"/>
+    <circle cx="638" cy="360" r="2.2" fill="#55d7df" fill-opacity=".8"/>
+    <circle cx="360" cy="638" r="2.2" fill="#55d7df" fill-opacity=".8"/>
+    <circle cx="82" cy="360" r="2.2" fill="#55d7df" fill-opacity=".8"/>
+
+    <g fill="#eea76d" fill-opacity=".8">
+      <rect x="237" y="188" width="5" height="5" rx=".7"/>
+      <rect x="476" y="225" width="4" height="4" rx=".6"/>
+      <rect x="187" y="354" width="5" height="5" rx=".7"/>
+      <rect x="520" y="391" width="4" height="4" rx=".6"/>
+      <rect x="286" y="500" width="5" height="5" rx=".7"/>
+      <rect x="414" y="300" width="4" height="4" rx=".6"/>
+      <rect x="389" y="455" width="5" height="5" rx=".7"/>
+    </g>
+    <g stroke="#eea76d" stroke-opacity=".7" stroke-width=".8">
+      <path d="M229 190h13m-6.5-6.5v13M468 227h12m-6-6v12M179 356h14m-7-7v14M512 393h12m-6-6v12M278 502h14m-7-7v14M407 302h12m-6-6v12M382 457h14m-7-7v14"/>
+    </g>
+  </g>
+
+  <circle cx="360" cy="360" r="294" stroke="#cad9d7" stroke-opacity=".38" stroke-width="1"/>
+  <circle cx="360" cy="360" r="300" stroke="#a9c0c0" stroke-opacity=".16" stroke-width=".75" stroke-dasharray="1 5"/>
+  <path d="M360 52v10m0 596v10M52 360h10m596 0h10" stroke="#55d7df" stroke-opacity=".64" stroke-width="1.2"/>
+</svg>

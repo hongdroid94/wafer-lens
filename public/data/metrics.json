@@ -1,0 +1,440 @@
+{
+  "source": {
+    "name": "WM-811K wafer map",
+    "uploader": "QINGYI",
+    "url": "https://www.kaggle.com/datasets/qingyi/wm811k-wafer-map/metadata",
+    "listingLicense": "CC0: Public Domain",
+    "caveat": "Original upstream provenance and rights were not independently verified."
+  },
+  "method": "9-nearest-neighbor classifier on 32x32 normalized die maps using failure-density, radial, angular, spatial, and adjacency features; inverse-square distance vote. Scores are relative neighbor support, not calibrated probabilities.",
+  "split": {
+    "seed": 8112027,
+    "resize": "32x32 nearest-neighbor cell-center",
+    "lotSplit": "SHA-256 first 32 bits of lotName modulo 5; residue 1 v2 validation, 2 v2 evaluation, 3/4 v2 training. Residue 0 was used for historical v1 evaluation.",
+    "caps": {
+      "trainPerClass": 160,
+      "validationPerClass": 40,
+      "finalPerClass": 40
+    },
+    "sampledRows": {
+      "train": {
+        "none": 160,
+        "Center": 160,
+        "Donut": 160,
+        "Edge-Loc": 160,
+        "Edge-Ring": 160,
+        "Loc": 160,
+        "Near-full": 60,
+        "Random": 160,
+        "Scratch": 160
+      },
+      "final": {
+        "none": 40,
+        "Center": 40,
+        "Donut": 40,
+        "Edge-Loc": 40,
+        "Edge-Ring": 40,
+        "Loc": 40,
+        "Near-full": 31,
+        "Random": 40,
+        "Scratch": 40
+      }
+    },
+    "sampledLots": {
+      "train": 1001,
+      "final": 302
+    }
+  },
+  "version": "v2 exploratory evaluation. Its evaluation lots do not overlap v2 training or validation lots, but 36 of 351 evaluated wafer IDs appeared in v1 training, so this is not a globally untouched prospective test.",
+  "evaluationHistory": {
+    "v2EvaluationLotOverlapWithV2Training": 0,
+    "v2EvaluationLotOverlapWithV2Validation": 0,
+    "v2EvaluationWaferIdOverlapWithV1Training": 36
+  },
+  "validationComparison": {
+    "baseline80": {
+      "training": 700,
+      "total": 358,
+      "accuracy": 0.5837988826815642,
+      "macroF1": 0.6195318480233424,
+      "abstentions": 73,
+      "perClass": {
+        "none": {
+          "support": 40,
+          "f1": 0.5116279069767442,
+          "recall": 0.55
+        },
+        "Center": {
+          "support": 40,
+          "f1": 0.6842105263157895,
+          "recall": 0.65
+        },
+        "Donut": {
+          "support": 40,
+          "f1": 0.7733333333333333,
+          "recall": 0.725
+        },
+        "Edge-Loc": {
+          "support": 40,
+          "f1": 0.41379310344827586,
+          "recall": 0.3
+        },
+        "Edge-Ring": {
+          "support": 40,
+          "f1": 0.8705882352941177,
+          "recall": 0.925
+        },
+        "Loc": {
+          "support": 40,
+          "f1": 0.24489795918367346,
+          "recall": 0.15
+        },
+        "Near-full": {
+          "support": 38,
+          "f1": 0.9870129870129869,
+          "recall": 1
+        },
+        "Random": {
+          "support": 40,
+          "f1": 0.7999999999999999,
+          "recall": 0.75
+        },
+        "Scratch": {
+          "support": 40,
+          "f1": 0.2903225806451613,
+          "recall": 0.225
+        }
+      }
+    },
+    "candidate160": {
+      "training": 1340,
+      "total": 358,
+      "accuracy": 0.6201117318435754,
+      "macroF1": 0.663810612610518,
+      "abstentions": 73,
+      "perClass": {
+        "none": {
+          "support": 40,
+          "f1": 0.5121951219512195,
+          "recall": 0.525
+        },
+        "Center": {
+          "support": 40,
+          "f1": 0.7792207792207791,
+          "recall": 0.75
+        },
+        "Donut": {
+          "support": 40,
+          "f1": 0.8157894736842106,
+          "recall": 0.775
+        },
+        "Edge-Loc": {
+          "support": 40,
+          "f1": 0.4067796610169491,
+          "recall": 0.3
+        },
+        "Edge-Ring": {
+          "support": 40,
+          "f1": 0.8809523809523809,
+          "recall": 0.925
+        },
+        "Loc": {
+          "support": 40,
+          "f1": 0.37735849056603776,
+          "recall": 0.25
+        },
+        "Near-full": {
+          "support": 38,
+          "f1": 0.9870129870129869,
+          "recall": 1
+        },
+        "Random": {
+          "support": 40,
+          "f1": 0.8421052631578948,
+          "recall": 0.8
+        },
+        "Scratch": {
+          "support": 40,
+          "f1": 0.37288135593220345,
+          "recall": 0.275
+        }
+      }
+    }
+  },
+  "evaluation": {
+    "type": "Deterministic, capped, class-stratified v2 evaluation by lotName. The v2 lot partition has no overlap with its own train/validation groups. Metrics describe this exploratory sample, not deployment prevalence or fab performance.",
+    "total": 351,
+    "correct": 212,
+    "accuracy": 0.603988603988604,
+    "macroF1": 0.661354357612383,
+    "abstained": 80,
+    "abstentionRate": 0.22792022792022792,
+    "accepted": 271,
+    "selectiveAccuracy": 0.7822878228782287,
+    "perClass": {
+      "none": {
+        "support": 40,
+        "precision": 0.5675675675675675,
+        "recall": 0.525,
+        "f1": 0.5454545454545455,
+        "abstained": 17
+      },
+      "Center": {
+        "support": 40,
+        "precision": 0.9090909090909091,
+        "recall": 0.75,
+        "f1": 0.821917808219178,
+        "abstained": 5
+      },
+      "Donut": {
+        "support": 40,
+        "precision": 0.8,
+        "recall": 0.7,
+        "f1": 0.7466666666666666,
+        "abstained": 4
+      },
+      "Edge-Loc": {
+        "support": 40,
+        "precision": 0.7083333333333334,
+        "recall": 0.425,
+        "f1": 0.53125,
+        "abstained": 15
+      },
+      "Edge-Ring": {
+        "support": 40,
+        "precision": 0.9444444444444444,
+        "recall": 0.85,
+        "f1": 0.8947368421052632,
+        "abstained": 2
+      },
+      "Loc": {
+        "support": 40,
+        "precision": 0.5714285714285714,
+        "recall": 0.2,
+        "f1": 0.29629629629629634,
+        "abstained": 17
+      },
+      "Near-full": {
+        "support": 31,
+        "precision": 0.9117647058823529,
+        "recall": 1,
+        "f1": 0.9538461538461539,
+        "abstained": 0
+      },
+      "Random": {
+        "support": 40,
+        "precision": 0.7857142857142857,
+        "recall": 0.825,
+        "f1": 0.8048780487804876,
+        "abstained": 1
+      },
+      "Scratch": {
+        "support": 40,
+        "precision": 0.625,
+        "recall": 0.25,
+        "f1": 0.35714285714285715,
+        "abstained": 19
+      }
+    },
+    "confusion": {
+      "none": {
+        "none": 21,
+        "Center": 0,
+        "Donut": 0,
+        "Edge-Loc": 0,
+        "Edge-Ring": 0,
+        "Loc": 1,
+        "Near-full": 0,
+        "Random": 0,
+        "Scratch": 1,
+        "ABSTAIN": 17
+      },
+      "Center": {
+        "none": 3,
+        "Center": 30,
+        "Donut": 1,
+        "Edge-Loc": 0,
+        "Edge-Ring": 0,
+        "Loc": 1,
+        "Near-full": 0,
+        "Random": 0,
+        "Scratch": 0,
+        "ABSTAIN": 5
+      },
+      "Donut": {
+        "none": 0,
+        "Center": 0,
+        "Donut": 28,
+        "Edge-Loc": 0,
+        "Edge-Ring": 0,
+        "Loc": 1,
+        "Near-full": 0,
+        "Random": 7,
+        "Scratch": 0,
+        "ABSTAIN": 4
+      },
+      "Edge-Loc": {
+        "none": 2,
+        "Center": 0,
+        "Donut": 0,
+        "Edge-Loc": 17,
+        "Edge-Ring": 2,
+        "Loc": 2,
+        "Near-full": 0,
+        "Random": 0,
+        "Scratch": 2,
+        "ABSTAIN": 15
+      },
+      "Edge-Ring": {
+        "none": 1,
+        "Center": 0,
+        "Donut": 0,
+        "Edge-Loc": 3,
+        "Edge-Ring": 34,
+        "Loc": 0,
+        "Near-full": 0,
+        "Random": 0,
+        "Scratch": 0,
+        "ABSTAIN": 2
+      },
+      "Loc": {
+        "none": 2,
+        "Center": 2,
+        "Donut": 4,
+        "Edge-Loc": 4,
+        "Edge-Ring": 0,
+        "Loc": 8,
+        "Near-full": 0,
+        "Random": 0,
+        "Scratch": 3,
+        "ABSTAIN": 17
+      },
+      "Near-full": {
+        "none": 0,
+        "Center": 0,
+        "Donut": 0,
+        "Edge-Loc": 0,
+        "Edge-Ring": 0,
+        "Loc": 0,
+        "Near-full": 31,
+        "Random": 0,
+        "Scratch": 0,
+        "ABSTAIN": 0
+      },
+      "Random": {
+        "none": 0,
+        "Center": 1,
+        "Donut": 2,
+        "Edge-Loc": 0,
+        "Edge-Ring": 0,
+        "Loc": 0,
+        "Near-full": 3,
+        "Random": 33,
+        "Scratch": 0,
+        "ABSTAIN": 1
+      },
+      "Scratch": {
+        "none": 8,
+        "Center": 0,
+        "Donut": 0,
+        "Edge-Loc": 0,
+        "Edge-Ring": 0,
+        "Loc": 1,
+        "Near-full": 0,
+        "Random": 2,
+        "Scratch": 10,
+        "ABSTAIN": 19
+      }
+    },
+    "demoPredictions": [
+      {
+        "id": "WM-676937",
+        "truth": "none",
+        "prediction": "none",
+        "topCandidate": "none",
+        "score": 0.45697697046629465,
+        "distance": 0.15598777270856162,
+        "abstained": false
+      },
+      {
+        "id": "WM-706944",
+        "truth": "Center",
+        "prediction": "none",
+        "topCandidate": "none",
+        "score": 0.4570891305334724,
+        "distance": 0.3107569471724405,
+        "abstained": false
+      },
+      {
+        "id": "WM-007334",
+        "truth": "Donut",
+        "prediction": "Random",
+        "topCandidate": "Random",
+        "score": 0.5611052606834418,
+        "distance": 0.4118038466109123,
+        "abstained": false
+      },
+      {
+        "id": "WM-746358",
+        "truth": "Edge-Loc",
+        "prediction": "Edge-Loc",
+        "topCandidate": "Edge-Loc",
+        "score": 0.5544468510947045,
+        "distance": 0.37298833902248585,
+        "abstained": false
+      },
+      {
+        "id": "WM-728394",
+        "truth": "Edge-Ring",
+        "prediction": "Edge-Ring",
+        "topCandidate": "Edge-Ring",
+        "score": 1,
+        "distance": 0.20474946792664955,
+        "abstained": false
+      },
+      {
+        "id": "WM-594796",
+        "truth": "Loc",
+        "prediction": "Loc",
+        "topCandidate": "Loc",
+        "score": 0.6456276181470936,
+        "distance": 0.5153403044823088,
+        "abstained": false
+      },
+      {
+        "id": "WM-245311",
+        "truth": "Near-full",
+        "prediction": "Near-full",
+        "topCandidate": "Near-full",
+        "score": 1,
+        "distance": 0.5332451335076442,
+        "abstained": false
+      },
+      {
+        "id": "WM-659791",
+        "truth": "Random",
+        "prediction": "Random",
+        "topCandidate": "Random",
+        "score": 1,
+        "distance": 0.27664858968858497,
+        "abstained": false
+      },
+      {
+        "id": "WM-763397",
+        "truth": "Scratch",
+        "prediction": "ABSTAIN",
+        "topCandidate": "none",
+        "score": 0.36472412055534986,
+        "distance": 0.222121428009436,
+        "abstained": true
+      }
+    ]
+  },
+  "limitations": [
+    "Dataset labels are visual pattern classes, not physical root causes.",
+    "The holdout is small and class-stratified, with limited Near-full examples.",
+    "32x32 nearest-neighbor downsampling may discard tiny defects.",
+    "A novel fab, process, image modality, or annotation policy can shift performance.",
+    "The source listing reports CC0 but original upstream rights have not been audited."
+  ]
+}

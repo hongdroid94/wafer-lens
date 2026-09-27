@@ -1,0 +1,364 @@
+{
+  "source": {
+    "name": "WM-811K wafer map",
+    "uploader": "QINGYI",
+    "url": "https://www.kaggle.com/datasets/qingyi/wm811k-wafer-map/metadata",
+    "listingLicense": "CC0: Public Domain",
+    "caveat": "Original upstream provenance and rights were not independently verified."
+  },
+  "method": "9-nearest-neighbor classifier on 32x32 normalized die maps using failure-density, radial, angular, spatial, and adjacency features; inverse-square distance vote. Scores are relative neighbor support, not calibrated probabilities.",
+  "split": {
+    "seed": 8112026,
+    "resize": "32x32 nearest-neighbor cell-center",
+    "lotSplit": "SHA-256 first 32 bits of lotName modulo 5; residue 0 holdout",
+    "caps": {
+      "trainPerClass": 80,
+      "holdoutPerClass": 40
+    },
+    "availableRows": {
+      "train/none": 118458,
+      "train/Center": 3338,
+      "train/Donut": 426,
+      "train/Edge-Loc": 4207,
+      "train/Edge-Ring": 7662,
+      "train/Loc": 2885,
+      "train/Near-full": 129,
+      "train/Random": 689,
+      "train/Scratch": 960,
+      "holdout/none": 28973,
+      "holdout/Center": 956,
+      "holdout/Donut": 129,
+      "holdout/Edge-Loc": 982,
+      "holdout/Edge-Ring": 2018,
+      "holdout/Loc": 708,
+      "holdout/Near-full": 20,
+      "holdout/Random": 177,
+      "holdout/Scratch": 233
+    },
+    "availableLots": {
+      "train/none": 5293,
+      "train/Center": 1304,
+      "train/Donut": 193,
+      "train/Edge-Loc": 2581,
+      "train/Edge-Ring": 860,
+      "train/Loc": 1991,
+      "train/Near-full": 119,
+      "train/Random": 360,
+      "train/Scratch": 848,
+      "holdout/none": 1298,
+      "holdout/Center": 344,
+      "holdout/Donut": 40,
+      "holdout/Edge-Loc": 630,
+      "holdout/Edge-Ring": 215,
+      "holdout/Loc": 481,
+      "holdout/Near-full": 18,
+      "holdout/Random": 89,
+      "holdout/Scratch": 211
+    },
+    "sampledRows": {
+      "train": {
+        "none": 80,
+        "Center": 80,
+        "Donut": 80,
+        "Edge-Loc": 80,
+        "Edge-Ring": 80,
+        "Loc": 80,
+        "Near-full": 80,
+        "Random": 80,
+        "Scratch": 80
+      },
+      "holdout": {
+        "none": 40,
+        "Center": 40,
+        "Donut": 40,
+        "Edge-Loc": 40,
+        "Edge-Ring": 40,
+        "Loc": 40,
+        "Near-full": 20,
+        "Random": 40,
+        "Scratch": 40
+      }
+    },
+    "sampledLots": {
+      "train": 641,
+      "holdout": 282
+    }
+  },
+  "version": "v1 historical baseline; original test results were inspected before the v2 training-size comparison.",
+  "evaluation": {
+    "type": "Deterministic, capped, class-stratified holdout from unseen lotName groups; no train/holdout lot overlap. Metrics describe this sample, not deployment prevalence or fab performance.",
+    "total": 340,
+    "correct": 209,
+    "accuracy": 0.6147058823529412,
+    "macroF1": 0.6701342820705727,
+    "abstained": 70,
+    "abstentionRate": 0.20588235294117646,
+    "accepted": 270,
+    "selectiveAccuracy": 0.774074074074074,
+    "perClass": {
+      "none": {
+        "support": 40,
+        "precision": 0.4745762711864407,
+        "recall": 0.7,
+        "f1": 0.5656565656565656,
+        "abstained": 10
+      },
+      "Center": {
+        "support": 40,
+        "precision": 1,
+        "recall": 0.75,
+        "f1": 0.8571428571428571,
+        "abstained": 3
+      },
+      "Donut": {
+        "support": 40,
+        "precision": 0.8780487804878049,
+        "recall": 0.9,
+        "f1": 0.888888888888889,
+        "abstained": 1
+      },
+      "Edge-Loc": {
+        "support": 40,
+        "precision": 0.6818181818181818,
+        "recall": 0.375,
+        "f1": 0.48387096774193555,
+        "abstained": 16
+      },
+      "Edge-Ring": {
+        "support": 40,
+        "precision": 0.9393939393939394,
+        "recall": 0.775,
+        "f1": 0.8493150684931509,
+        "abstained": 7
+      },
+      "Loc": {
+        "support": 40,
+        "precision": 0.7272727272727273,
+        "recall": 0.2,
+        "f1": 0.3137254901960785,
+        "abstained": 18
+      },
+      "Near-full": {
+        "support": 20,
+        "precision": 0.8695652173913043,
+        "recall": 1,
+        "f1": 0.9302325581395349,
+        "abstained": 0
+      },
+      "Random": {
+        "support": 40,
+        "precision": 0.918918918918919,
+        "recall": 0.85,
+        "f1": 0.8831168831168831,
+        "abstained": 3
+      },
+      "Scratch": {
+        "support": 40,
+        "precision": 0.5,
+        "recall": 0.175,
+        "f1": 0.25925925925925924,
+        "abstained": 12
+      }
+    },
+    "confusion": {
+      "none": {
+        "none": 28,
+        "Center": 0,
+        "Donut": 0,
+        "Edge-Loc": 0,
+        "Edge-Ring": 0,
+        "Loc": 0,
+        "Near-full": 0,
+        "Random": 0,
+        "Scratch": 2,
+        "ABSTAIN": 10
+      },
+      "Center": {
+        "none": 5,
+        "Center": 30,
+        "Donut": 1,
+        "Edge-Loc": 0,
+        "Edge-Ring": 0,
+        "Loc": 0,
+        "Near-full": 0,
+        "Random": 0,
+        "Scratch": 1,
+        "ABSTAIN": 3
+      },
+      "Donut": {
+        "none": 0,
+        "Center": 0,
+        "Donut": 36,
+        "Edge-Loc": 0,
+        "Edge-Ring": 1,
+        "Loc": 2,
+        "Near-full": 0,
+        "Random": 0,
+        "Scratch": 0,
+        "ABSTAIN": 1
+      },
+      "Edge-Loc": {
+        "none": 4,
+        "Center": 0,
+        "Donut": 1,
+        "Edge-Loc": 15,
+        "Edge-Ring": 1,
+        "Loc": 0,
+        "Near-full": 0,
+        "Random": 2,
+        "Scratch": 1,
+        "ABSTAIN": 16
+      },
+      "Edge-Ring": {
+        "none": 1,
+        "Center": 0,
+        "Donut": 0,
+        "Edge-Loc": 1,
+        "Edge-Ring": 31,
+        "Loc": 0,
+        "Near-full": 0,
+        "Random": 0,
+        "Scratch": 0,
+        "ABSTAIN": 7
+      },
+      "Loc": {
+        "none": 4,
+        "Center": 0,
+        "Donut": 3,
+        "Edge-Loc": 4,
+        "Edge-Ring": 0,
+        "Loc": 8,
+        "Near-full": 0,
+        "Random": 0,
+        "Scratch": 3,
+        "ABSTAIN": 18
+      },
+      "Near-full": {
+        "none": 0,
+        "Center": 0,
+        "Donut": 0,
+        "Edge-Loc": 0,
+        "Edge-Ring": 0,
+        "Loc": 0,
+        "Near-full": 20,
+        "Random": 0,
+        "Scratch": 0,
+        "ABSTAIN": 0
+      },
+      "Random": {
+        "none": 0,
+        "Center": 0,
+        "Donut": 0,
+        "Edge-Loc": 0,
+        "Edge-Ring": 0,
+        "Loc": 0,
+        "Near-full": 3,
+        "Random": 34,
+        "Scratch": 0,
+        "ABSTAIN": 3
+      },
+      "Scratch": {
+        "none": 17,
+        "Center": 0,
+        "Donut": 0,
+        "Edge-Loc": 2,
+        "Edge-Ring": 0,
+        "Loc": 1,
+        "Near-full": 0,
+        "Random": 1,
+        "Scratch": 7,
+        "ABSTAIN": 12
+      }
+    },
+    "demoPredictions": [
+      {
+        "id": "WM-000174",
+        "truth": "none",
+        "prediction": "ABSTAIN",
+        "topCandidate": "Scratch",
+        "score": 0.4356503953628405,
+        "distance": 0.2155131426414469,
+        "abstained": true
+      },
+      {
+        "id": "WM-085260",
+        "truth": "Center",
+        "prediction": "Center",
+        "topCandidate": "Center",
+        "score": 0.5567046643105337,
+        "distance": 0.42805640803302303,
+        "abstained": false
+      },
+      {
+        "id": "WM-007878",
+        "truth": "Donut",
+        "prediction": "Donut",
+        "topCandidate": "Donut",
+        "score": 0.5780791541808943,
+        "distance": 0.6326936373965982,
+        "abstained": false
+      },
+      {
+        "id": "WM-007398",
+        "truth": "Edge-Loc",
+        "prediction": "Edge-Loc",
+        "topCandidate": "Edge-Loc",
+        "score": 0.5034404179653721,
+        "distance": 0.3268387823161439,
+        "abstained": false
+      },
+      {
+        "id": "WM-020863",
+        "truth": "Edge-Ring",
+        "prediction": "Edge-Ring",
+        "topCandidate": "Edge-Ring",
+        "score": 1,
+        "distance": 0.16805366868566923,
+        "abstained": false
+      },
+      {
+        "id": "WM-088509",
+        "truth": "Loc",
+        "prediction": "Loc",
+        "topCandidate": "Loc",
+        "score": 0.9002603765968571,
+        "distance": 0.15198261251040643,
+        "abstained": false
+      },
+      {
+        "id": "WM-006340",
+        "truth": "Near-full",
+        "prediction": "Near-full",
+        "topCandidate": "Near-full",
+        "score": 1,
+        "distance": 0.013142227638819297,
+        "abstained": false
+      },
+      {
+        "id": "WM-019073",
+        "truth": "Random",
+        "prediction": "Random",
+        "topCandidate": "Random",
+        "score": 1,
+        "distance": 0.3030773041639911,
+        "abstained": false
+      },
+      {
+        "id": "WM-006976",
+        "truth": "Scratch",
+        "prediction": "none",
+        "topCandidate": "none",
+        "score": 0.6836295624362625,
+        "distance": 0.18936634523972254,
+        "abstained": false
+      }
+    ]
+  },
+  "limitations": [
+    "Dataset labels are visual pattern classes, not physical root causes.",
+    "The holdout is small and class-stratified, with limited Near-full examples.",
+    "32x32 nearest-neighbor downsampling may discard tiny defects.",
+    "A novel fab, process, image modality, or annotation policy can shift performance.",
+    "The source listing reports CC0 but original upstream rights have not been audited."
+  ]
+}
